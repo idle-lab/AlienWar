@@ -13,6 +13,9 @@ class Score_board:
         # 当前分数和历史分数记录
         self.score = 0
         self.history_score = Path("./data/history score.txt")
+        if not self.history_score.exists():
+            self.history_score.parent.mkdir(parents=True, exist_ok=True)
+            self.history_score.write_text("")
         self.history_score_ranking = []
 
         # 读取历史分数

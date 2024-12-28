@@ -131,7 +131,7 @@ class AlienInvasion:
             new_alien2.rect.x = random.uniform(850,1100)
             self.alien_set.add(new_alien1)
             self.alien_set.add(new_alien2)
-            self.alien_time = random.randint(0,self.setting.alien_crate_speed)
+            self.alien_time = random.randint(0,int(self.setting.alien_crate_speed))
 
         # 更新敌人位置
         for alien in self.alien_set.copy():
@@ -302,7 +302,7 @@ class AlienInvasion:
             if self.alien_time >= self.setting.alien_crate_speed:
                 # 生成敌人
                 self.alien_set.add(Alien(self))
-                self.alien_time = random.randint(0,self.setting.alien_crate_speed)
+                self.alien_time = random.randint(0,int(self.setting.alien_crate_speed))
 
         # 更新敌人位置
         for alien in self.alien_set.copy():
